@@ -22,9 +22,10 @@
     <script src="assets/js/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/dataTables.responsive.min.js"></script>
     <script src="assets/js/responsive.bootstrap.js"></script>
-    <!-- daterangepicker -->
+    <!-- datepicker -->
     <script src="assets/js/bootstrap-datepicker.js"></script>
-
+    <!-- notify -->
+    <script src="assets/js/notify.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="assets/js/custom.js"></script>
   </body>
