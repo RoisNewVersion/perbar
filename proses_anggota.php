@@ -9,6 +9,7 @@ $nama = $_POST['nama'];
 $ttl = $_POST['ttl'];
 $tgl_daftar = $_POST['tgl_daftar'];
 $tgl_berakhir = $_POST['tgl_berakhir'];
+$status_aktif = $_POST['status_aktif'];
 
 // jadikan array
 $dataInput = array(
@@ -16,27 +17,32 @@ $dataInput = array(
 	'ttl'=>ucwords($ttl),
 	'tgl_daftar'=>$tgl_daftar,
 	'tgl_berakhir'=>$tgl_berakhir,	
-	'status_aktif'=>1
+	'status_aktif'=>$status_aktif
 	);
 
 switch ($type) {
 	case 'new':
-		$pesan = 'aaa';// $db->insert('anggota', $dataInput);
+		$pesan = $db->insert('anggota', $dataInput);
 
 		if ($pesan) {
-			echo json_encode('sukses');
+			echo json_encode(array('pesan'=>"Tambah berhasil", 'type'=>'success'));
 		} else {
-		// echo $db->date_get_last_errors()r();
-			echo json_encode('gagal '. $db->getLastError());
+			echo json_encode(array('pesan'=>'Gagal '. $db->getLastError(), 'type'=>'error'));
 		}
 		break;
 
 	case 'edit':
-		# code...
+		$db->where('id_anggota', $id_ang);
+		$pesan = $db->update('anggota', $dataInput);
+		if ($pesan) {
+			echo json_encode(array('pesan'=>"Edit berhasil", 'type'=>'success'));
+		} else {
+			echo json_encode(array('pesan'=>'Gagal '. $db->getLastError(), 'type'=>'error'));
+		}
 		break;
 	
 	default:
-		# code...
+		echo json_encode('Gagal, error tidak diketahui ');
 		break;
 }
 ?>

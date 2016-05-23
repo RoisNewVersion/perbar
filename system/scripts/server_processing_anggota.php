@@ -40,7 +40,8 @@ $columns = array(
 		// return "<a class='btn btn-xs btn-round btn-info' href=edit.php?id_kar=".$d.">Edit</a>";
 		$a = "<button class='btn btn-xs btn-round btn-info' type='button' onClick=editModal(".$d.")>Edit</button> ";
 		$a .= "<button class='btn btn-xs btn-round btn-info' type='button' onClick=deleteModal(".$d.")>Delete</button> ";
-		return $a;
+		$c = ($row[4]=='1') ? "<button class='btn btn-xs btn-round btn-info' type='button' onClick=cetakKartu(".$d.")>Cetak</button> " : "";
+		return $a.$c;
 	}, 'field' => 'id_anggota'),
 );
 

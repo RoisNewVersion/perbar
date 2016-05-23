@@ -19,7 +19,7 @@
                 <div class="x_panel" style="height:600px;">
                   <div class="x_title">
 
-                    <h2>Anggota Perpus</h2> --  
+                    <h2>Anggota Perpus</h2> ---
                     <!-- <button class="btn btn-info btn-xs" type="button" data-target="#modalAdd" data-toggle="modal">Tambah</button> -->
                     <button class="btn btn-info btn-xs" type=button id="openmodal">Tambah</button>
                     <ul class="nav navbar-right panel_toolbox">
@@ -92,6 +92,14 @@
                     <label class="control-label">Tgl Berakhir</label>
                     <input class="form-control" id="tgl_berakhir" type="text" name="tgl_berakhir" placeholder="Tgl berakhir" required="">
                   </div>
+
+                  <div class="form-group">
+                    <label class="control-label">Status Aktif</label>
+                    <select class="form-control" name="status_aktif" id="status_aktif">
+                      <option value="1">Aktif</option>
+                      <option value="0">Tdk Aktif</option>
+                    </select>
+                  </div>
                 
               </div>
               <div class="modal-footer">
@@ -135,6 +143,7 @@
     $('#openmodal').click(function(event) {
       // console.log('aaa');
       // tambah type
+      $('#formAdd')[0].reset();
       $('#type').val('new');
       $('#myModalLabel2').html('Tambah Anggota');
       $('#btnSubmit').html('Simpan');
@@ -143,26 +152,29 @@
     // submit form
     $('#btnSubmit').click(function(event) {
       // event.preventDefault();
+      // validasi input
+      // $('#formAdd').valid();
       // kumpulkan data inputan
-      var dataInput = {
+      dataInput = {
         type: $('#type').val(),
         id_ang: $('#id_ang').val(),
         nama: $('#nama').val(),
         ttl: $('#ttl').val(),
         tgl_daftar: $('#tgl_daftar').val(),
-        tgl_berakhir: $('#tgl_berakhir').val()
+        tgl_berakhir: $('#tgl_berakhir').val(),
+        status_aktif: $('#status_aktif').val()
       };
 
       console.log(dataInput);
       $.ajax({
         url: 'proses_anggota.php',
         type: 'POST',
-        
+        dataType: 'json',
         data: dataInput,
       })
       .success(function(res){
         console.log(res);
-        $.notify('Tambah anggota '+res,'success');
+        $.notify(res.pesan, res.type);
         $('#modalAdd').modal('hide');
         $('#formAdd')[0].reset();
         // $('#modalAdd').remove();
@@ -172,4 +184,64 @@
     });
 
   });
+
+  // function edit
+  function editModal(id_ang)
+  {
+    if (id_ang)
+    {
+      $.ajax({
+        url: 'getEditAnggota.php',
+        type: 'GET',
+        dataType: 'json',
+        data: {id_ang: id_ang},
+      })
+      .success(function(res) {
+        console.log(res);
+        // dat.nama.val(res.nama);
+        $('#type').val('edit');
+        $('#id_ang').val(res.id_anggota);
+        $('#nama').val(res.nama);
+        $('#ttl').val(res.ttl);
+        $('#tgl_daftar').val(res.tgl_daftar);
+        $('#tgl_berakhir').val(res.tgl_berakhir);
+        $('#status_aktif').val(res.status_aktif);
+        // show atribut modal
+        $('#myModalLabel2').html('Edit Anggota');
+        $('#btnSubmit').html('Edit');
+        $('#modalAdd').modal('show');
+      })
+      .error(function(er) {
+        console.log(er);
+      });;
+      
+    }else{
+      alert('id anggota kosng');
+    }
+  }
+  // function delete
+  function deleteModal(id_ang)
+  {
+    if (id_ang)
+    {
+      var conf = confirm('Yakin ingin menghapus?');
+      if (conf)
+      {
+        $.ajax({
+          url: 'hapus.php',
+          type: 'POST',
+          dataType: 'json',
+          data: {id: id_ang, type: 'anggota'},
+        })
+        .success(function(response) {
+          console.log(response);
+          $.notify(response, 'success');
+          dt.ajax.reload();
+        });
+      }
+    }
+    else {
+      alert('Gagal hapus');
+    }
+  }
 </script>
