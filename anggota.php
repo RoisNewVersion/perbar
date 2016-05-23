@@ -244,4 +244,5 @@
       alert('Gagal hapus');
     }
   }
+  
 </script>
