@@ -33,14 +33,15 @@ $columns = array(
 	array( 'db' => 'ttl',  'dt' => 1, 'field' => 'ttl' ),
 	array( 'db' => 'tgl_daftar', 'dt' => 2, 'field' => 'tgl_daftar' ),
 	array( 'db' => 'tgl_berakhir', 'dt' => 3, 'field' => 'tgl_berakhir'),
-	array( 'db' => 'status_aktif', 'dt' => 4, 'field' => 'status_aktif', 'formatter'=> function($d, $row){
+	array( 'db' => 'uid', 'dt' => 4, 'field' => 'uid'),
+	array( 'db' => 'status_aktif', 'dt' => 5, 'field' => 'status_aktif', 'formatter'=> function($d, $row){
 		return $a = ($d == '1') ? 'Aktif' : 'Tdk aktif' ;
 	}),
-	array( 'db' => 'id_anggota', 'dt' => 5, 'formatter'=> function($d, $row){
+	array( 'db' => 'id_anggota', 'dt' => 6, 'formatter'=> function($d, $row){
 		// return "<a class='btn btn-xs btn-round btn-info' href=edit.php?id_kar=".$d.">Edit</a>";
 		$a = "<button class='btn btn-xs btn-round btn-info' type='button' onClick=editModal(".$d.")>Edit</button> ";
 		$a .= "<button class='btn btn-xs btn-round btn-info' type='button' onClick=deleteModal(".$d.")>Delete</button> ";
-		$c = ($row[4]=='1') ? "<button class='btn btn-xs btn-round btn-info' type='button' onClick=cetakKartu(".$d.")>Cetak</button> " : "";
+		$c = ($row[5]=='1') ? "<button class='btn btn-xs btn-round btn-info' type='button' onClick=cetakKartu(".$row[4].")>Cetak</button> " : "";
 		return $a.$c;
 	}, 'field' => 'id_anggota'),
 );

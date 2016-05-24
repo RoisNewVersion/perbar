@@ -44,6 +44,7 @@
                             <th>TTL</th>
                             <th>Tgl daftar</th>
                             <th>Tgl berakhir</th>
+                            <th>UID</th>
                             <th>Aktif / Tdk</th>
                             <th>Aksi</th>
                           </tr>
@@ -216,7 +217,7 @@
       });;
       
     }else{
-      alert('id anggota kosng');
+      alert('id anggota kosong');
     }
   }
   // function delete
@@ -247,6 +248,17 @@
   // cetka kartu
   function cetakKartu(id_ang)
   {
+    if (id_ang)
+      {
+        var left = (screen.width/2) - (800/2);
+        var right = (screen.height/2) - (640/2);
+
+        var url = 'getKartuAnggota.php?uid='+id_ang;
+
+        window.open(url, '', 'width=800, height=640, scrollbars=yes, left='+left+', top='+top+'');
+      } else {
+        alert('UID tidak diketahui');
+      }
     
   }
   

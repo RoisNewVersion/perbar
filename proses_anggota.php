@@ -13,6 +13,7 @@ $status_aktif = $_POST['status_aktif'];
 
 // jadikan array
 $dataInput = array(
+	'uid'=>time(),
 	'nama'=>ucwords($nama),
 	'ttl'=>ucwords($ttl),
 	'tgl_daftar'=>$tgl_daftar,
