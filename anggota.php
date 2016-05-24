@@ -244,5 +244,10 @@
       alert('Gagal hapus');
     }
   }
+  // cetka kartu
+  function cetakKartu(id_ang)
+  {
+    
+  }
   
 </script>
