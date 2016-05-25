@@ -11,55 +11,8 @@
 			display: none;
 			height: 0;
 		}
-		.namakartu{
-			font-family: arial;
-			font-size: 14px;
-			text-align: center;
-		}
-		.namajl{
-			font-size: 11px;
- 			text-align: center;
-		}
-		.namasd{
-			font-size: 18px;
-			text-align: center;
-			font-weight: bold;
-		}
-		tr.border_bawah{
-	 	
-		    border-bottom: solid 1px #000;
-		}
-		table{
-			width: 400px;
-			/*table-layout: fixed;*/
-			border-collapse: collapse;
-		}
+		
 	}
-
-	/*untuk tampil sblm cetak klik*/
-		.namakartu{
-			font-family: arial;
-			font-size: 14px;
-			text-align: center;
-		}
-		.namajl{
-			font-size: 11px;
- 			text-align: center;
-		}
-		.namasd{
-			font-size: 18px;
-			text-align: center;
-			font-weight: bold;
-		}
-		tr.border_bawah{
-	 	
-		    border-bottom: solid 1px #000;
-		}
-		table{
-			width: 400px;
-			/*table-layout: fixed;*/
-			border-collapse: collapse;
-		}
 	</style>
 </head>
 <body>

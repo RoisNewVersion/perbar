@@ -26,7 +26,6 @@ switch ($type) {
 			echo json_encode('Gagal hapus');
 		}
 		break;
-	
 	default:
 		# code...
 		break;
