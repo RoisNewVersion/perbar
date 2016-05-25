@@ -16,6 +16,16 @@ switch ($type) {
 			echo json_encode('Gagal hapus');
 		}
 		break;
+
+	case 'buku':
+		$db->where('id_buku', $id);
+		$del = $db->delete('buku');
+		if ($del) {
+			echo json_encode('Berhasil hapus');
+		} else {
+			echo json_encode('Gagal hapus');
+		}
+		break;
 	
 	default:
 		# code...
