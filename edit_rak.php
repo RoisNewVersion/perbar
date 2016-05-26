@@ -22,7 +22,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" style="height:600px;">
                   <div class="x_title">
-                    <h2>Edit Kategori</h2>
+                    <h2>Edit Rak</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -34,19 +34,19 @@
                   </div>
                   <!-- isinya disini -->
                     <?php 
-                    $db->where('id_kategori', $id);
-                    $kat = $db->getOne('kategori');
+                    $db->where('id_rak', $id);
+                    $kat = $db->getOne('rak');
                     ?>
                     <div class="col-md-5">
-                    <form action="proses_kategori.php" method="post" accept-charset="utf-8">
+                    <form action="proses_rak.php" method="post" accept-charset="utf-8">
                     <input type="hidden" name="type" value="edit">
-                    <input type="hidden" name="id_kategori" value="<?= $kat['id_kategori'] ?>">
+                    <input type="hidden" name="id_rak" value="<?= $kat['id_rak'] ?>">
                     <div class="form-group">
-                      <label class="control-label">Nama Kategori</label>
-                      <input class="form-control" type="text" name="nama_kategori" value="<?= $kat['nama_kategori'] ?>" placeholder="Nama kategori">
+                      <label class="control-label">Nama rak</label>
+                      <input class="form-control" type="text" name="nama_rak" value="<?= $kat['nama_rak'] ?>" placeholder="Nama rak">
                     </div>
                     <input type="submit" name="" value="Edit" class="btn btn-primary btn-xs">
-                    <a class="btn btn-info btn-xs" href="kategori.php" title="">Cancel</a>
+                    <a class="btn btn-info btn-xs" href="rak.php" title="">Cancel</a>
                     </form>
                     </div>
                   <!-- /isi -->

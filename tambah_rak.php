@@ -8,7 +8,6 @@
   $make = new Core();
   $make->check_session('admin');
 
-  $id = $_GET['id'];
 ?>
 <?php include 'layout/menu.php' ?>
 <!-- page content -->
@@ -22,7 +21,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" style="height:600px;">
                   <div class="x_title">
-                    <h2>Edit Kategori</h2>
+                    <h2>Tambah Rak</h2> 
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -33,20 +32,15 @@
                     <div class="clearfix"></div>
                   </div>
                   <!-- isinya disini -->
-                    <?php 
-                    $db->where('id_kategori', $id);
-                    $kat = $db->getOne('kategori');
-                    ?>
                     <div class="col-md-5">
-                    <form action="proses_kategori.php" method="post" accept-charset="utf-8">
-                    <input type="hidden" name="type" value="edit">
-                    <input type="hidden" name="id_kategori" value="<?= $kat['id_kategori'] ?>">
+                    <form action="proses_rak.php" method="post" accept-charset="utf-8">
+                    <input type="hidden" name="type" value="new">
                     <div class="form-group">
-                      <label class="control-label">Nama Kategori</label>
-                      <input class="form-control" type="text" name="nama_kategori" value="<?= $kat['nama_kategori'] ?>" placeholder="Nama kategori">
+                      <label class="control-label">Nama Rak</label>
+                      <input class="form-control" type="text" name="nama_rak" placeholder="Nama kategori">
                     </div>
-                    <input type="submit" name="" value="Edit" class="btn btn-primary btn-xs">
-                    <a class="btn btn-info btn-xs" href="kategori.php" title="">Cancel</a>
+                    <input type="submit" name="" value="Simpan" class="btn btn-primary btn-xs">
+                    <a class="btn btn-info btn-xs" href="rak.php" title="">Cancel</a>
                     </form>
                     </div>
                   <!-- /isi -->

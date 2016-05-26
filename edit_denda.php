@@ -22,7 +22,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" style="height:600px;">
                   <div class="x_title">
-                    <h2>Edit Kategori</h2>
+                    <h2>Edit denda</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -34,19 +34,19 @@
                   </div>
                   <!-- isinya disini -->
                     <?php 
-                    $db->where('id_kategori', $id);
-                    $kat = $db->getOne('kategori');
+                    $db->where('id_denda', $id);
+                    $kat = $db->getOne('denda');
                     ?>
                     <div class="col-md-5">
-                    <form action="proses_kategori.php" method="post" accept-charset="utf-8">
+                    <form action="proses_denda.php" method="post" accept-charset="utf-8">
                     <input type="hidden" name="type" value="edit">
-                    <input type="hidden" name="id_kategori" value="<?= $kat['id_kategori'] ?>">
+                    <input type="hidden" name="id_denda" value="<?= $kat['id_denda'] ?>">
                     <div class="form-group">
-                      <label class="control-label">Nama Kategori</label>
-                      <input class="form-control" type="text" name="nama_kategori" value="<?= $kat['nama_kategori'] ?>" placeholder="Nama kategori">
+                      <label class="control-label">Nominal denda</label>
+                      <input class="form-control" type="text" name="nominal" value="<?= $kat['nominal'] ?>" placeholder="Nominal denda">
                     </div>
                     <input type="submit" name="" value="Edit" class="btn btn-primary btn-xs">
-                    <a class="btn btn-info btn-xs" href="kategori.php" title="">Cancel</a>
+                    <a class="btn btn-info btn-xs" href="denda.php" title="">Cancel</a>
                     </form>
                     </div>
                   <!-- /isi -->

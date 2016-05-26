@@ -18,7 +18,7 @@
                       </li>
                       <li><a href="pengembalian.php">Pengembalian</a>
                       </li>
-                      <li><a href="Pendapatan.php">Pendapatan</a>
+                      <li><a href="pendapatan.php">Pendapatan</a>
                       </li>
                       
                     </ul>
@@ -32,6 +32,17 @@
                       </li>
                       <li><a href="denda.php">Denda</a>
                       </li>
+                      
+                    </ul>
+                  </li>
+
+                  <li><a><i class="fa fa-print"></i> Cetak <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="cetak_buku.php">Buku</a>
+                      </li>
+                      <li><a href="cetak_anggota.php">Cetak anggota</a>
+                      </li>
+                      
                       
                     </ul>
                   </li>
