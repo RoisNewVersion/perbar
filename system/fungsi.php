@@ -79,5 +79,26 @@ class Core
 		session_destroy();
 		header("Location: login.php");
 	}
+
+	// function response json
+	public function json_response($pesan = null, $typeError = null, $code = '')
+	{
+		header_remove();
+		http_response_code($code);
+		header("Cache-Controll: no-transform, public, max-age30, s-maxage=900");
+		header("Content-type: application/json");
+		$status = array(
+			200=>'200 OK',
+			400=>'400 Bad Request',
+			422=>'422 Unprocessable entity',
+			500=>'500 Internal server error'
+			);
+		header("Status:".$status[$code]);
+		return json_encode(array(
+			'status'=>$code < 300,
+			'message'=>$pesan,
+			'type'=>$typeError,
+			));
+	}
 }
  ?>
