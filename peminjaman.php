@@ -30,7 +30,7 @@
                   <!-- isinya disini -->
                     <div class="row">
                     <div class="col-md-7">
-                    <h4>Masukan barcode</h4>
+                    <h4>Masukan barcode Anggota dan Buku</h4>
                      <form class="form-inline">
                       <div class="form-group">
                         <input type="text" id="uid_ang" class="form-control" placeholder="ID Anggota">
@@ -52,6 +52,7 @@
                     <!-- tabel -->
                     <div class="row">
                     <div class="col-md-12">
+                    <h2>Daftar Peminjaman buku</h2>
                     <table id="tabelku" class="table table-bordered table-striped dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
