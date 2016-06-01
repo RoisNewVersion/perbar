@@ -120,8 +120,12 @@
   function aksiPengembalian(id, jenis)
   {
     // alert(id);
-    $.getJSON('/path/to/file', {param1: 'value1'}, function(json, textStatus) {
-        /*optional stuff to do after success */
+    if (jenis == 'kembalikan') {
+      confirm('Yakin ingin mengembalikan buku?');
+    }
+    $.getJSON('aksiCheckPengembalian.php', {id: id, aksi: jenis}, function(json, textStatus) {
+        var js = json;
+        alert('Jumlah hari telat : '+js.jml_hari_telat+ ' & Total denda : Rp '+js.total_denda);
     });
   }
 </script>

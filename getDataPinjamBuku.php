@@ -30,7 +30,7 @@ if (!empty($data)) {
     <tr>
       <td>'.$data[0]['nama'].'</td>
       <td>'.$data[0]['judul'].'</td>
-      <td>'.$data[0]['tgl_kembali'].'</td>
+      <td>'.$data[0]['tgl_pinjam'].'</td>
       <td>'.$data[0]['tgl_kembali'].'</td>
       <td><button class="btn btn-info btn-xs" type="button" onclick="aksiPengembalian('.$data[0]['id_transaksi'].', \'denda\')">Cek denda</button>
       <button class="btn btn-primary btn-xs" type="button" onclick="aksiPengembalian('.$data[0]['id_transaksi'].',\'kembalikan\')">Kembalikan</button>
