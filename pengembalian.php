@@ -124,8 +124,12 @@
       confirm('Yakin ingin mengembalikan buku?');
     }
     $.getJSON('aksiCheckPengembalian.php', {id: id, aksi: jenis}, function(json, textStatus) {
-        var js = json;
-        alert('Jumlah hari telat : '+js.jml_hari_telat+ ' & Total denda : Rp '+js.total_denda);
+      var js = json;
+      if(js.berhasil == 'update_stok'){
+        location.reload(true);
+        return false;
+      }
+      alert('Jumlah hari telat : '+js.jml_hari_telat+ ' & Total denda : Rp '+js.total_denda);
     });
   }
 </script>
