@@ -20,7 +20,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" style="height:600px;">
                   <div class="x_title">
-                    <h2>Home</h2>
+                    <h2>HOME PERPUSTAKAAN SDN 01 GABUS PATI</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -31,7 +31,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <!-- isinya disini -->
-                    INI TAMPILAN AWAL HALAMAN
+                    <center><img width="500" height="500" src="assets/images/SDN.jpg" alt="" title="SDN 01 GABUS PATI" class="img-responsive"></center>
+
                   <!-- /isi -->
                 </div>
               </div>
