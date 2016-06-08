@@ -15,7 +15,7 @@ $make->check_session('admin');
     <div class="row">
 
       <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel" style="height:600px;">
+        <div class="x_panel" >
           <div class="x_title">
             <h2>Pendapatan Perpus</h2> ---
             <!-- <button class="btn btn-info btn-xs" type=button id="openmodal">Tambah</button> -->
