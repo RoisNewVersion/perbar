@@ -42,7 +42,8 @@
                       </li>
                       <li><a href="cetak_anggota.php">Cetak anggota</a>
                       </li>
-                      
+                      <li><a href="cetak_pendapatan.php">Cetak pendapatan</a>
+                      </li>
                       
                     </ul>
                   </li>
